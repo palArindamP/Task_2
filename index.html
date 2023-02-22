@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+    <div class="container" id="sub-container">
+
+    </div>
+    <button id="change">Change Color</button>
+    <button id="add">Add Child</button>
+    <button id="remove">Remove Child</button>
+
+    <script>
+        // Functionality to change the color of that content background.
+        let colorsArray =['red', 'blue', 'green', 'yellow']
+        document.getElementById('change').addEventListener('click', function(){
+            let randomColor = colorsArray[Math.floor(Math.random()* colorsArray.length)]
+            document.getElementById('sub-container').style.background= randomColor
+        })
+
+        // Make the squire div
+        let newDiv = document.createElement('div')
+        newDiv.style.cssText = "width: 50px; hight:50px; background:brown"
+
+        //Add child
+        document.getElementById('add').addEventListener('click', function(){
+            document.getElementById('sub-container').appendChild(newDiv)
+        })
+
+        // Remove child
+        document.getElementById('remove').addEventListener('click', function(){
+            document.getElementById('sub-container').removeChild(newDiv)
+        })
+    </script>
+
+</body>
+</html>
